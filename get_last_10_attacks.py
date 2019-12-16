@@ -19,8 +19,8 @@ def getAttacks(argv):
                "Content-Type": "application/json"}    
 
     Request_Body = json.loads('{"filter":{"clientid": \
-    [ ' + str(client_id) + '],"time":[' + str(stime) + ',\
-    ' + str(etime) + ']},"offset":0,"limit":10,"order_desc":true}')
+    [ ' + str(client_id) + '],"time":[[' + str(stime) + ',\
+    ' + str(etime) + ']]},"offset":0,"limit":10,"order_desc":true}')
     print(Request_Body)
     attacks = requests.post("https://api.wallarm.com/v1/objects/attack", \
                             headers=Headers, json=Request_Body)    
